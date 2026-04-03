@@ -1,6 +1,13 @@
+import os
 from groq import Groq
+from dotenv import load_dotenv
 
-client = Groq(api_key="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")
+load_dotenv()
+
+api_key = os.getenv("GROQ_API_KEY")
+print(api_key)
+
+client = Groq(api_key=api_key)
 
 
 def generate_explanation(row):
