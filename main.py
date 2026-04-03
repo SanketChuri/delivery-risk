@@ -1,8 +1,9 @@
 from data_cleaning import load_data, inspect_data, clean_data
 from risk_engine import apply_risk_logic
 from llm_agent import generate_explanation
+from langsmith import traceable
 
-
+@traceable(name="delivery_risk_pipeline")
 def main():
     file_path = "data/dirtyFile.csv"
 
